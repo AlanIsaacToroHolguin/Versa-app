@@ -1,0 +1,8 @@
+# Documentos de la propuesta (no van en el repo de la app)
+*.pptx
+*.docx
+*.pdf
+
+# Sistema
+Thumbs.db
+.DS_Store
