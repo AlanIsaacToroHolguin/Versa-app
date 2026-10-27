@@ -154,7 +154,7 @@
   function notConfiguredNotice(container) {
     if (container) {
       container.innerHTML = '<div class="notice notice--warn"><strong>Falta conectar la base de datos.</strong> ' +
-        'Completa <code>js/config.js</code> con la URL y la anon key de tu proyecto de Supabase (ver SETUP.md).</div>';
+        'Completa <code>assets/js/core/config.js</code> con la URL y la anon key de tu proyecto de Supabase (ver docs/SETUP.md).</div>';
     }
   }
 
