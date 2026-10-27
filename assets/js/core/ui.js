@@ -1,5 +1,5 @@
 /* ============================================
-   VERSA — main.js
+   VERSA — ui.js (comportamiento común de la interfaz)
    Sin librerías externas. Todo nativo.
    ============================================ */
 

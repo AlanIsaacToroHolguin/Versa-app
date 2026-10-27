@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>VERSA — Conecta el ecosistema musical</title>
 <meta name="description" content="VERSA conecta a músicos emergentes, estudios de grabación, managers y disqueras de Medellín. Gratis para músicos.">
-<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="/assets/css/site.css">
+<link rel="stylesheet" href="/assets/css/app.css">
 </head>
 <body>
 
@@ -17,7 +18,9 @@
       <a href="#problema">El problema</a>
       <a href="#como">Cómo funciona</a>
       <a href="#quien">Para quién</a>
-      <a href="#encuesta" class="btn btn--sm">Participar</a>
+      <a href="/directorio/">Directorio</a>
+      <a href="/ingresar/">Ingresar</a>
+      <a href="/registro/" class="btn btn--sm">Crear cuenta</a>
     </nav>
     <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -31,12 +34,12 @@
     <p class="hero__kicker">Medellín · Ecosistema musical</p>
     <h1 class="hero__title">VERSA</h1>
     <p class="hero__lead">
-      Un universo virtual donde los músicos emergentes, los managers, las salas de ensayo
+      Un universo virtual donde los músicos emergentes, los managers, las disqueras, las salas de ensayo
       y los patrocinadores se conectan <strong>sin intermediarios</strong> y de forma sencilla.
     </p>
     <div class="hero__actions">
-      <a href="#encuesta" class="btn">Quiero participar</a>
-      <a href="#como" class="btn btn--ghost">Ver cómo funciona</a>
+      <a href="/registro/" class="btn">Crear mi cuenta</a>
+      <a href="/directorio/" class="btn btn--ghost">Ver el directorio</a>
     </div>
     <p class="hero__note">Gratis para músicos. Siempre.</p>
   </div>
@@ -117,18 +120,22 @@
       <article class="agent reveal">
         <div class="agent__head"><h3>Músico emergente</h3><span class="tag tag--free">Gratis</span></div>
         <p>Encuentra dónde grabar y construye una trayectoria que puede demostrar.</p>
+        <a class="agent__cta" href="/registro/?rol=musico">Unirme como músico →</a>
       </article>
       <article class="agent reveal">
         <div class="agent__head"><h3>Estudio o sala de ensayo</h3><span class="tag">Difusión</span></div>
         <p>Llena su capacidad ociosa con clientes nuevos, sin invertir en publicidad.</p>
+        <a class="agent__cta" href="/registro/?rol=estudio">Registrar mi estudio o sala →</a>
       </article>
       <article class="agent reveal">
         <div class="agent__head"><h3>Manager</h3><span class="tag">Descubrimiento</span></div>
         <p>Encuentra talento con datos reales de constancia y colaboración.</p>
+        <a class="agent__cta" href="/registro/?rol=manager">Entrar como manager →</a>
       </article>
       <article class="agent reveal">
         <div class="agent__head"><h3>Disquera o sello</h3><span class="tag">Menos riesgo</span></div>
         <p>Decide con información verificada en lugar de apostar a ciegas.</p>
+        <a class="agent__cta" href="/registro/?rol=disquera">Entrar como disquera →</a>
       </article>
     </div>
 
@@ -177,6 +184,7 @@
       <p class="footer__tag">Conectamos el ecosistema musical de Medellín.</p>
     </div>
     <div class="footer__meta">
+      <p><a href="/legal/privacidad/">Privacidad y datos</a> · <a href="/legal/terminos/">Términos de uso</a></p>
       <p>Alan Isaac Toro · Juan Pablo Mejía · José David Jaramillo</p>
       <p>Fundamentos para el Emprendimiento Cultural</p>
       <p>Tecnológico de Artes Débora Arango · <span id="year">2026</span></p>
@@ -184,6 +192,6 @@
   </div>
 </footer>
 
-<script src="js/main.js"></script>
+<script src="/assets/js/core/ui.js"></script>
 </body>
 </html>

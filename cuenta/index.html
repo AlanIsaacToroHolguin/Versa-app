@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mi cuenta — VERSA</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="/assets/css/site.css">
+<link rel="stylesheet" href="/assets/css/app.css">
+</head>
+<body data-page="cuenta">
+<div id="siteNav"></div>
+
+<main class="page">
+  <div class="wrap wrap--narrow">
+    <div class="page__head">
+      <p class="eyebrow">Mi cuenta</p>
+      <h1 class="h2" id="accTitle">Tu perfil</h1>
+      <p class="lead" id="accRole"></p>
+    </div>
+
+    <div id="accMsg"></div>
+
+    <form id="profileForm" class="form" novalidate hidden>
+
+      <section class="panel">
+        <h2 class="panel__title">Visibilidad</h2>
+        <p class="panel__hint">Nada se publica sin tu permiso. Mientras tu perfil esté oculto, solo tú lo ves.</p>
+        <label class="check">
+          <input type="checkbox" id="is_public">
+          <span><strong style="color:var(--ink)">Hacer público mi perfil</strong> en el directorio, junto con los trabajos que registre.</span>
+        </label>
+      </section>
+
+      <section class="panel">
+        <h2 class="panel__title">Perfil</h2>
+        <p class="panel__hint">Lo que verán los demás cuando tu perfil sea público.</p>
+        <div class="form">
+          <div class="field">
+            <label for="display_name">Nombre</label>
+            <input class="input" id="display_name" maxlength="80" required>
+          </div>
+          <div class="field">
+            <label for="bio">Presentación</label>
+            <textarea class="textarea" id="bio" maxlength="600" placeholder="Quién eres, qué haces, qué buscas."></textarea>
+          </div>
+          <div class="form__row">
+            <div class="field">
+              <label for="zone">Zona o barrio</label>
+              <input class="input" id="zone" maxlength="80" placeholder="Ej. Laureles, Comuna 13">
+            </div>
+            <div class="field">
+              <label for="city">Ciudad</label>
+              <input class="input" id="city" maxlength="60">
+            </div>
+          </div>
+          <div class="field">
+            <label for="genres" id="genresLabel">Géneros</label>
+            <input class="input" id="genres" placeholder="rock, hip hop, salsa">
+            <small>Separados por coma. Máximo 8.</small>
+          </div>
+          <div id="studioFields" hidden>
+            <div class="field">
+              <label for="services">Servicios</label>
+              <textarea class="textarea" id="services" maxlength="600" placeholder="Grabación, mezcla, ensayo por horas, alquiler de equipos…"></textarea>
+            </div>
+            <div class="field" style="margin-top:18px">
+              <label for="price_note">Precios de referencia</label>
+              <input class="input" id="price_note" maxlength="120" placeholder="Ej. Ensayo desde $25.000/hora">
+            </div>
+          </div>
+          <div class="form__row">
+            <div class="field">
+              <label for="instagram">Instagram</label>
+              <input class="input" id="instagram" maxlength="100" placeholder="@usuario">
+            </div>
+            <div class="field">
+              <label for="website">Sitio web o enlace</label>
+              <input class="input" id="website" maxlength="200" placeholder="https://…">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2 class="panel__title">Contacto directo</h2>
+        <p class="panel__hint">Solo lo ven personas con cuenta en VERSA, y únicamente si tu perfil es público. Así el contacto es directo y sin intermediarios.</p>
+        <div class="form__row">
+          <div class="field">
+            <label for="whatsapp">WhatsApp</label>
+            <input class="input" id="whatsapp" inputmode="tel" maxlength="20" placeholder="300 123 4567">
+          </div>
+          <div class="field">
+            <label for="contact_email">Correo de contacto</label>
+            <input class="input" id="contact_email" type="email" maxlength="120">
+          </div>
+        </div>
+      </section>
+
+      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+        <button class="btn btn--lg" type="submit" id="saveBtn">Guardar cambios</button>
+        <a class="btn btn--ghost btn--lg" id="viewPublic" href="#" hidden>Ver mi perfil público</a>
+      </div>
+    </form>
+
+    <section class="panel" id="passwordPanel" hidden style="margin-top:34px">
+      <h2 class="panel__title">Contraseña</h2>
+      <form id="passwordForm" class="form" novalidate>
+        <div class="field">
+          <label for="newPassword">Nueva contraseña</label>
+          <input class="input" id="newPassword" type="password" minlength="8" autocomplete="new-password">
+          <small>Mínimo 8 caracteres.</small>
+        </div>
+        <div><button class="btn btn--ghost" type="submit">Cambiar contraseña</button></div>
+      </form>
+    </section>
+
+    <section class="panel panel--soft" id="dataPanel" hidden>
+      <h2 class="panel__title">Tus datos</h2>
+      <p class="panel__hint">Puedes llevarte una copia de todo lo que guardamos de ti, o borrar tu cuenta y tus datos por completo. Esto último no se puede deshacer.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <button class="btn btn--ghost" type="button" id="exportBtn">Descargar mis datos</button>
+        <button class="btn btn--danger" type="button" id="deleteBtn">Borrar mi cuenta</button>
+      </div>
+    </section>
+  </div>
+</main>
+
+<div id="siteFooter"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="/assets/js/core/config.js"></script>
+<script src="/assets/js/core/app.js"></script>
+<script src="/assets/js/core/ui.js"></script>
+<script src="/assets/js/pages/cuenta.js"></script>
+</body>
+</html>

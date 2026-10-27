@@ -1,0 +1,189 @@
+/* ============================================
+   VERSA — Estilos de la aplicación (formularios, directorio, perfil, trayectoria)
+   Complementa site.css (mismos tokens).
+   ============================================ */
+
+.page{ padding:56px 0 90px; min-height:70vh; }
+.page__head{ margin-bottom:34px; }
+.page .h2{ margin-bottom:10px; }
+.page .lead{ margin-bottom:0; }
+
+.panel{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:28px 26px;
+  margin-bottom:22px;
+}
+.panel--soft{ background:var(--soft); border-color:transparent; }
+.panel__title{
+  font-family:var(--serif);
+  margin:0 0 6px; font-size:1.2rem; font-weight:700;
+}
+.panel__hint{ margin:0 0 20px; color:var(--gray); font-size:.93rem; }
+
+/* ---------- Formularios ---------- */
+.form{ display:grid; gap:18px; }
+.field{ display:grid; gap:6px; }
+.field label, .field__label{ font-size:.88rem; font-weight:600; }
+.field small{ color:var(--gray); font-size:.8rem; }
+
+.input, .select, .textarea{
+  width:100%;
+  padding:12px 14px;
+  font:inherit; font-size:1rem;
+  color:var(--ink); background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:10px;
+  transition:border-color var(--t), box-shadow var(--t);
+}
+.textarea{ min-height:96px; resize:vertical; }
+.input:focus, .select:focus, .textarea:focus{
+  outline:none; border-color:var(--blue);
+  box-shadow:0 0 0 3px rgba(0,212,255,.2);
+}
+.form__row{ display:grid; gap:18px; grid-template-columns:1fr; }
+
+.check{ display:flex; gap:10px; align-items:flex-start; font-size:.92rem; color:var(--gray); }
+.check input{ margin-top:4px; width:18px; height:18px; accent-color:var(--blue); flex:none; }
+.check a{ color:var(--ink); }
+
+button.btn{ border:0; cursor:pointer; font-family:inherit; }
+button.btn:disabled{ opacity:.55; cursor:not-allowed; transform:none; box-shadow:none; }
+button.btn--ghost{ border:1px solid var(--line); }
+.btn--danger{ background:#FFE9E9; color:#8A1C1C; }
+.btn--danger:hover{ background:#FFD6D6; box-shadow:none; }
+
+.link-btn{
+  background:none; border:0; padding:0; cursor:pointer;
+  font:inherit; font-size:.9rem; color:var(--gray); text-decoration:underline;
+}
+
+/* ---------- Avisos ---------- */
+.notice{
+  padding:14px 18px; border-radius:10px;
+  background:var(--blue-wash); color:var(--ink); font-size:.95rem;
+  margin:0 0 22px;
+}
+.notice--warn{ background:#FFF4D6; }
+.notice--err{ background:#FFE9E9; color:#8A1C1C; }
+.notice code{ background:rgba(0,0,0,.06); padding:1px 6px; border-radius:5px; }
+
+.toast{
+  position:fixed; left:50%; bottom:26px; z-index:100;
+  transform:translate(-50%, 20px); opacity:0;
+  max-width:min(92vw, 460px);
+  padding:13px 20px; border-radius:12px;
+  background:var(--ink); color:var(--paper); font-size:.95rem;
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
+  transition:opacity .3s ease, transform .3s ease;
+}
+.toast.is-in{ opacity:1; transform:translate(-50%, 0); }
+.toast--error{ background:#8A1C1C; }
+.toast--ok{ background:#0B5C3B; }
+
+/* ---------- Auth ---------- */
+.auth{ max-width:520px; margin:0 auto; }
+.roles{ display:grid; gap:10px; grid-template-columns:1fr; }
+.role{
+  position:relative; display:block; cursor:pointer;
+  padding:14px 16px; border:1px solid var(--line); border-radius:12px;
+  transition:border-color var(--t), background var(--t);
+}
+.role input{ position:absolute; opacity:0; }
+.role strong{ display:block; font-size:.97rem; }
+.role span{ display:block; font-size:.84rem; color:var(--gray); margin-top:2px; }
+.role:hover{ border-color:var(--blue); }
+.role:has(input:checked){ border-color:var(--blue); background:var(--blue-wash); }
+.role:has(input:focus-visible){ outline:2px solid var(--blue); outline-offset:2px; }
+.auth__alt{ margin:22px 0 0; text-align:center; color:var(--gray); font-size:.93rem; }
+.auth__alt a{ color:var(--ink); font-weight:600; }
+
+/* ---------- Distintivos ---------- */
+.badge{
+  display:inline-block; padding:4px 10px; border-radius:999px;
+  font-size:.72rem; font-weight:700; letter-spacing:.03em;
+  background:var(--soft); color:var(--gray);
+}
+.badge--ok{ background:#DDF7EA; color:#0B5C3B; }
+.badge--wait{ background:#FFF1CC; color:#7A5600; }
+.badge--no{ background:#FFE9E9; color:#8A1C1C; }
+
+.chips{ display:flex; flex-wrap:wrap; gap:6px; margin-top:12px; }
+.chip{
+  padding:3px 10px; border-radius:999px; font-size:.78rem;
+  background:var(--soft); color:var(--gray);
+}
+
+/* ---------- Directorio ---------- */
+.filters{
+  display:grid; gap:12px; grid-template-columns:1fr;
+  margin-bottom:26px; padding:20px; background:var(--soft); border-radius:var(--radius);
+}
+.cards{ display:grid; gap:16px; grid-template-columns:1fr; }
+.pcard{
+  display:block; text-decoration:none; color:inherit;
+  border:1px solid var(--line); border-radius:var(--radius);
+  padding:22px; background:var(--paper);
+  transition:border-color var(--t), transform var(--t), box-shadow var(--t);
+}
+.pcard:hover{
+  border-color:var(--blue); transform:translateY(-3px);
+  box-shadow:0 10px 30px rgba(0,212,255,.12);
+}
+.pcard__top{ display:flex; justify-content:space-between; align-items:center; gap:8px; margin-bottom:12px; flex-wrap:wrap; }
+.pcard__name{ font-family:var(--serif); margin:0 0 4px; font-size:1.15rem; }
+.pcard__meta{ margin:0; color:var(--gray); font-size:.88rem; }
+.pcard__bio{ margin:10px 0 0; color:var(--gray); font-size:.93rem; }
+.empty{ padding:40px 10px; text-align:center; color:var(--gray); }
+
+/* ---------- Perfil público ---------- */
+.profile-head{ display:grid; gap:10px; margin-bottom:30px; }
+.profile-head h1{ font-family:var(--serif); margin:0; font-size:clamp(2rem, 7vw, 3rem); line-height:1.1; }
+.profile-head__meta{ color:var(--gray); margin:0; }
+.profile-actions{ display:flex; flex-wrap:wrap; gap:10px; margin-top:6px; }
+.kv{ display:grid; gap:4px; margin:0 0 16px; }
+.kv dt{ font-size:.75rem; letter-spacing:.14em; text-transform:uppercase; color:var(--gray); }
+.kv dd{ margin:0; }
+
+/* ---------- Trabajos / trayectoria ---------- */
+.works{ list-style:none; margin:0; padding:0; display:grid; gap:12px; }
+.work{
+  border:1px solid var(--line); border-radius:12px; padding:16px 18px;
+  display:grid; gap:6px;
+}
+.work--ok{ border-color:#BFE9D3; background:#F6FDF9; }
+.work__top{ display:flex; justify-content:space-between; align-items:flex-start; gap:10px; flex-wrap:wrap; }
+.work__title{ margin:0; font-weight:700; font-size:1rem; }
+.work__meta{ margin:0; color:var(--gray); font-size:.86rem; }
+.work__desc{ margin:0; font-size:.93rem; color:var(--gray); }
+.work__actions{ display:flex; flex-wrap:wrap; gap:8px; margin-top:6px; }
+
+/* ---------- Legal ---------- */
+.prose{ max-width:720px; }
+.prose h2{ font-family:var(--serif); font-size:1.3rem; margin:34px 0 10px; }
+.prose p, .prose li{ color:var(--gray); }
+.prose strong{ color:var(--ink); }
+.prose a{ color:var(--ink); }
+
+/* ---------- Pie de página (enlaces) ---------- */
+.footer a{ color:var(--gray-2); }
+.footer a:hover{ color:var(--paper); }
+
+@media (min-width:700px){
+  .form__row{ grid-template-columns:1fr 1fr; }
+  .roles{ grid-template-columns:1fr 1fr; }
+  .filters{ grid-template-columns:2fr 1fr 1fr 1fr; align-items:end; }
+  .cards{ grid-template-columns:1fr 1fr; }
+}
+@media (min-width:980px){
+  .cards{ grid-template-columns:repeat(3,1fr); }
+}
+
+/* ---------- Landing: enlaces de cada actor ---------- */
+.agent__cta{
+  display:inline-block; margin-top:14px;
+  font-size:.9rem; font-weight:700; color:var(--ink); text-decoration:none;
+  border-bottom:2px solid var(--blue);
+}
+.agent__cta:hover{ background:var(--blue-wash); }

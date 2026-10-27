@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Directorio — VERSA</title>
+<meta name="description" content="Músicos, estudios, salas, managers y disqueras de Medellín, con trayectoria verificada.">
+<link rel="stylesheet" href="/assets/css/site.css">
+<link rel="stylesheet" href="/assets/css/app.css">
+</head>
+<body data-page="directorio">
+<div id="siteNav"></div>
+
+<main class="page">
+  <div class="wrap">
+    <div class="page__head">
+      <p class="eyebrow">Directorio</p>
+      <h1 class="h2">Quién hace música en Medellín</h1>
+      <p class="lead">Perfiles públicos de músicos, estudios, salas, managers y disqueras. El sello <strong>✓ verificado</strong> significa que la otra parte confirmó el trabajo.</p>
+    </div>
+
+    <div id="dirMsg"></div>
+
+    <form class="filters" id="filters" role="search">
+      <div class="field">
+        <label for="q">Buscar por nombre</label>
+        <input class="input" id="q" type="search" maxlength="60">
+      </div>
+      <div class="field">
+        <label for="role">Tipo</label>
+        <select class="select" id="role">
+          <option value="">Todos</option>
+          <option value="musico">Músicos</option>
+          <option value="estudio">Estudios y salas</option>
+          <option value="manager">Managers</option>
+          <option value="disquera">Disqueras y sellos</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="genre">Género</label>
+        <input class="input" id="genre" maxlength="30" placeholder="rock, salsa…">
+      </div>
+      <div class="field">
+        <label class="check" style="padding-bottom:12px">
+          <input type="checkbox" id="onlyVerified"><span>Solo con trabajos verificados</span>
+        </label>
+      </div>
+    </form>
+
+    <div class="cards" id="results" aria-live="polite"></div>
+  </div>
+</main>
+
+<div id="siteFooter"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="/assets/js/core/config.js"></script>
+<script src="/assets/js/core/app.js"></script>
+<script src="/assets/js/core/ui.js"></script>
+<script src="/assets/js/pages/directorio.js"></script>
+</body>
+</html>

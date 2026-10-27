@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mi trayectoria — VERSA</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="/assets/css/site.css">
+<link rel="stylesheet" href="/assets/css/app.css">
+</head>
+<body data-page="trabajos">
+<div id="siteNav"></div>
+
+<main class="page">
+  <div class="wrap wrap--narrow">
+    <div class="page__head">
+      <p class="eyebrow">Mi trayectoria</p>
+      <h1 class="h2">Lo que has hecho, registrado</h1>
+      <p class="lead">Registra cada trabajo. Si la otra parte lo confirma, queda <strong>✓ verificado</strong> y cuenta como trayectoria real.</p>
+    </div>
+
+    <div id="workMsg"></div>
+
+    <section class="panel" id="pendingPanel" hidden>
+      <h2 class="panel__title">Por confirmar</h2>
+      <p class="panel__hint">Alguien te registró como parte de estos trabajos. Confirma solo si fue así.</p>
+      <ul class="works" id="pendingList"></ul>
+    </section>
+
+    <section class="panel">
+      <h2 class="panel__title">Registrar un trabajo</h2>
+      <p class="panel__hint">Elige con quién lo hiciste: si esa persona está en VERSA, recibirá la solicitud para confirmarlo.</p>
+      <form id="workForm" class="form" novalidate>
+        <div class="field">
+          <label for="title">¿Qué hiciste?</label>
+          <input class="input" id="title" maxlength="120" required placeholder="Ej. Grabación del EP «Montaña»">
+        </div>
+        <div class="form__row">
+          <div class="field">
+            <label for="kind">Tipo</label>
+            <select class="select" id="kind">
+              <option value="grabacion">Grabación</option>
+              <option value="ensayo">Ensayo</option>
+              <option value="concierto">Concierto</option>
+              <option value="produccion">Producción</option>
+              <option value="colaboracion">Colaboración</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="work_date">Fecha</label>
+            <input class="input" id="work_date" type="date" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="description">Detalles (opcional)</label>
+          <textarea class="textarea" id="description" maxlength="500"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="cpSearch">¿Con quién? Busca en VERSA</label>
+          <input class="input" id="cpSearch" type="search" maxlength="60" placeholder="Nombre del estudio, productor o colaborador">
+          <select class="select" id="cpSelect" aria-label="Resultados de búsqueda">
+            <option value="">— Sin contraparte en VERSA —</option>
+          </select>
+          <small>Solo aparecen perfiles públicos. Con contraparte, el trabajo queda «esperando confirmación».</small>
+        </div>
+        <div class="field" id="cpNameField">
+          <label for="cpName">…o escribe el nombre si no está en VERSA</label>
+          <input class="input" id="cpName" maxlength="80">
+          <small>Quedará como «autodeclarado»: visible, pero sin el sello de verificado.</small>
+        </div>
+
+        <button class="btn btn--lg" type="submit" id="addBtn">Registrar trabajo</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2 class="panel__title">Mis trabajos</h2>
+      <ul class="works" id="myList"></ul>
+    </section>
+  </div>
+</main>
+
+<div id="siteFooter"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="/assets/js/core/config.js"></script>
+<script src="/assets/js/core/app.js"></script>
+<script src="/assets/js/core/ui.js"></script>
+<script src="/assets/js/pages/trayectoria.js"></script>
+</body>
+</html>
